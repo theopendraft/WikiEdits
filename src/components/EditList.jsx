@@ -32,18 +32,17 @@ function EditList({ isLoading, error, edits, searchedUser }) {
         <div className="space-y-4">
           {edits.map((edit) => (
             <div key={edit.revid} className="border border-slate-200 rounded-lg p-4 bg-slate-50 hover:shadow-md hover:border-slate-300 transition-all duration-200">
-              
               <a 
-                href={`https://${edit.wiki}/wiki/${encodeURIComponent(edit.title)}`} 
+                href={`https://${edit.project || edit.wiki}/wiki/${encodeURIComponent(edit.full_page_title || edit.title)}`} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-lg font-semibold text-blue-700 hover:underline"
               >
-                {edit.title}
+                {edit.full_page_title || edit.title}
               </a>
 
               <div className="text-sm text-slate-500 mt-1">
-                <strong>Wiki:</strong> {edit.wiki} | <strong>Date:</strong> {new Date(edit.timestamp).toLocaleString()}
+                <strong>Wiki:</strong> {edit.project || edit.wiki} | <strong>Date:</strong> {new Date(edit.timestamp).toLocaleString()}
               </div>
               
               {edit.comment && (
