@@ -95,11 +95,7 @@ function App() {
               transition={{ type: 'spring', stiffness: 120, damping: 8 }}
               className="flex justify-center mb-2"
             >
-              <svg width="80" height="64" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="30" cy="30" r="28" stroke="#00669A" strokeWidth="4" fill="#fff" />
-                <circle cx="30" cy="30" r="12" fill="#2F9A67" />
-                <path d="M30 10 A20 20 0 1 1 29.99 10.01" stroke="#9B0000" strokeWidth="4" fill="none" />
-              </svg>
+              <img src="/global_edit.svg" alt="Global Edits" className="w-16 h-16" />
             </motion.div>
             <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight mb-2" style={{ color: '#00669A' }}>
               Wikimedia Global Edits Finder
@@ -136,18 +132,7 @@ function App() {
                 transition={{ duration: 0.5 }}
               >
                               <div className="w-full">
-                <motion.div
-                  initial={{ rotate: -10, scale: 0.9 }}
-                  animate={{ rotate: 0, scale: 1 }}
-                  transition={{ type: 'spring', stiffness: 120, damping: 8 }}
-                  className="flex justify-center mb-4"
-                >
-                  <svg width="64" height="48" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="30" cy="30" r="28" stroke="#00669A" strokeWidth="4" fill="#fff" />
-                    <circle cx="30" cy="30" r="12" fill="#2F9A67" />
-                    <path d="M30 10 A20 20 0 1 1 29.99 10.01" stroke="#9B0000" strokeWidth="4" fill="none" />
-                  </svg>
-                </motion.div>
+ 
                 <h2 className="text-2xl font-bold mb-2 text-center tracking-tight" style={{ color: '#00669A' }}>Recent Edits</h2>
               </div>
               <div className="flex flex-col w-full">
