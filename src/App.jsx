@@ -12,7 +12,7 @@ import ErrorBoundary from './components/ErrorBoundary';
 function App() {
   const [view, setView] = useState('recent'); // 'recent' or 'toppages'
   // Recent Edits state
-  const [username, setUsername] = useState('Jimbo_Wales');
+  const [username, setUsername] = useState([]);
   const [edits, setEdits] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -150,6 +150,7 @@ function App() {
                 </motion.div>
                 <h2 className="text-2xl font-bold mb-2 text-center tracking-tight" style={{ color: '#00669A' }}>Recent Edits</h2>
               </div>
+              <div className="flex flex-col w-full">
                 <input
                   type="text"
                   value={username}
@@ -158,6 +159,8 @@ function App() {
                   className="flex-grow w-full px-4 py-3 text-lg border-2 border-[#2F9A67] rounded-lg focus:ring-2 focus:ring-[#00669A] focus:outline-none transition-all bg-[#f8fafc] hover:border-[#9B0000]"
                   required
                 />
+                <span className="text-xs text-slate-500 mt-1 ml-1">E.g. Jimbo Wales</span>
+                </div>
                 <div className="grid first-letter:gap-4 sm:gap-6 sm:grid-cols-2 w-full">
                 <div className="flex flex-col w-full">
                   <input

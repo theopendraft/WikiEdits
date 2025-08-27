@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 function TopEditedPagesForm({ onSubmit }) {
-    const [project, setProject] = useState('en.wikipedia.org');
+    const [project, setProject] = useState([]);
     const [username, setUsername] = useState('');
     const [start, setStart] = useState('');
     const [end, setEnd] = useState('');
@@ -35,15 +35,19 @@ function TopEditedPagesForm({ onSubmit }) {
             </motion.div>
             <h2 className="text-2xl font-bold mb-2 text-center tracking-tight" style={{ color: '#00669A' }}>Top Edited Pages</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="flex flex-col w-full">
                 <motion.input
                     type="text"
                     value={project}
                     onChange={e => setProject(e.target.value)}
-                    placeholder="Project (e.g. en.wikipedia.org)"
+                    placeholder="Project name"
                     className="px-4 py-3 border-2 border-[#2F9A67] rounded-lg focus:outline-none transition-all text-lg bg-[#f8fafc] hover:border-[#9B0000]"
                     required
                     whileFocus={{ scale: 1.03 }}
                 />
+                                <span className="text-xs text-slate-500 mt-1 ml-1">E.g. en.wikipedia.org</span>
+                </div>
+                <div className="flex flex-col w-full">
                 <motion.input
                     type="text"
                     value={username}
@@ -53,6 +57,9 @@ function TopEditedPagesForm({ onSubmit }) {
                     required
                     whileFocus={{ scale: 1.03 }}
                 />
+                <span className="text-xs text-slate-500 mt-1 ml-1">E.g. Jimbo Wales</span>
+                </div>
+                <div className="flex flex-col w-full">
                 <motion.input
                     type="date"
                     value={start}
@@ -61,6 +68,9 @@ function TopEditedPagesForm({ onSubmit }) {
                     required
                     whileFocus={{ scale: 1.03 }}
                 />
+                <span className="text-xs text-slate-500 mt-1 ml-1">Start date (e.g. 28-01-2020)</span>
+                </div>
+                <div className="flex flex-col w-full">
                 <motion.input
                     type="date"
                     value={end}
@@ -69,7 +79,10 @@ function TopEditedPagesForm({ onSubmit }) {
                     required
                     whileFocus={{ scale: 1.03 }}
                 />
-            </div>
+           
+            <span className="text-xs text-slate-500 mt-1 ml-1">End date (e.g. 30-01-2025)</span>
+                </div>
+                 </div>
             <motion.button
                 type="submit"
                 className="mt-4 bg-[#00669A] text-white font-semibold px-8 py-2 rounded-lg border border-[#00669A] shadow-md hover:shadow-xl hover:bg-white hover:text-[#00669A] transition-all duration-200 text-lg tracking-wide"
