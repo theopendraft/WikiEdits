@@ -28,7 +28,7 @@ A modern, responsive React app to explore your global Wikimedia activity, includ
    ```sh
    npm run dev
    ```
-3. Open [http://localhost:5173](http://localhost:5173) in your browser.
+3. Open [https://wikiedits.vercel.app/](https://wikiedits.vercel.app/) in your browser.
 
 ## Usage
 
